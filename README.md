@@ -10,9 +10,24 @@ Consolle application:
 ```bash
 dotnet new console
 ```
-Web application:
+Template to create a minimal Web application:
 ```bash
 dotnet new web
+```
+
+# Before you build
+
+You now have the Hello World code and the project description, but there’s a critical
+step that needs to take place before you build or run your application. You need to
+restore your packages. You have a set of dependencies for your project, and each
+dependency is a package that may also have its own dependencies. The package-
+restore step expands the full tree of dependencies and determines which versions of
+each package to install.
+
+To do this, perform this command:
+
+```bash
+dotnet restore
 ```
 
 Application Structure:

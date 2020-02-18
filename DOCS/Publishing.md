@@ -70,7 +70,7 @@ First, you need create a Dockerfile:
 
 ```
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1
-COPY bin/Release/netcoreapp2.0/publish/ /root/
+COPY bin/Release/netcoreapp3.1/publish/ /root/
 ENTRYPOINT dotnet /root/hwapp.dll
 ```
 
@@ -86,9 +86,64 @@ After, execute:
 docker run -it hwapp
 ```
 
+## Web Application
+
+Firs, we need change de the Program class:
+
+```c#
+namespace hwwebapp
+{
+  public class Program
+  {
+    public static void Main(string[] args)
+    {
+       BuildWebHost(args).Run();
+    }
+    public static IWebHost BuildWebHost(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+           .UseUrls("http://*:5000/")  // add This Line
+           .UseStartup<Startup>()            
+           .Build();
+  }
+}
+```
+
+The added line allows URLs other than http://localhost:5000. Because the applica-
+tion is being deployed to a container, you’ll need to test it by pinging it from outside
+the container.
+
+In the Dockerfile, we need expose the port to out of containter
 
 
+```
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+COPY bin/Release/netcoreapp3.1/publish/ /root/
+EXPOSE 5000/tcp
+ENTRYPOINT dotnet /root/hwwebapp.dll
+```
+
+And after:
+
+```bash
+dotnet publish -c Release
+docker build -t hwwebapp .
+docker run -it -p 5000:5000 hwwebapp
+```
+
+# Packaging for distribution
 
 
+.NET Core makes it easy to package your library or application so that others can use
+it in their applications.
+
+To share your library with other applications, you need use the command:
+
+```bash
+dotnet pack -c Release
+```
+
+This command will create a hwapp.1.0.0.nupkg file
+
+The .nupkg file produced by the dotnet pack command is a NuGet package.
 
 

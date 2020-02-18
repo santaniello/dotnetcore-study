@@ -1,0 +1,11 @@
+/home/elliot/Cursos/dotnetcore/csvparser/bin/Debug/netcoreapp3.1/csvparser
+/home/elliot/Cursos/dotnetcore/csvparser/bin/Debug/netcoreapp3.1/csvparser.deps.json
+/home/elliot/Cursos/dotnetcore/csvparser/bin/Debug/netcoreapp3.1/csvparser.runtimeconfig.json
+/home/elliot/Cursos/dotnetcore/csvparser/bin/Debug/netcoreapp3.1/csvparser.runtimeconfig.dev.json
+/home/elliot/Cursos/dotnetcore/csvparser/bin/Debug/netcoreapp3.1/csvparser.dll
+/home/elliot/Cursos/dotnetcore/csvparser/bin/Debug/netcoreapp3.1/csvparser.pdb
+/home/elliot/Cursos/dotnetcore/csvparser/obj/Debug/netcoreapp3.1/csvparser.csprojAssemblyReference.cache
+/home/elliot/Cursos/dotnetcore/csvparser/obj/Debug/netcoreapp3.1/csvparser.AssemblyInfoInputs.cache
+/home/elliot/Cursos/dotnetcore/csvparser/obj/Debug/netcoreapp3.1/csvparser.AssemblyInfo.cs
+/home/elliot/Cursos/dotnetcore/csvparser/obj/Debug/netcoreapp3.1/csvparser.dll
+/home/elliot/Cursos/dotnetcore/csvparser/obj/Debug/netcoreapp3.1/csvparser.pdb
